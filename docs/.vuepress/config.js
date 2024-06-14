@@ -13,7 +13,25 @@ export default defineUserConfig({
 
   theme: defaultTheme({
     logo: 'https://vuejs.press/images/hero.png',
-    navbar: ['/', '/get-started'],
+    navbar: [
+      { text: '首页', link: '/' },
+      { text: '快速开始', link: '/get-started' },
+      {
+        text: '前端技术',
+        prefix: '/group/',
+        children: ['foo.md', 'bar.md'],
+      },
+      {
+        text: 'Java',
+        prefix: '/java',
+        children: ['foo.md', 'bar.md'],
+      },
+      {
+        text: 'C-sharp',
+        prefix: '/C-sharp',
+        children: ['foo.md', 'bar.md'],
+      }
+    ],
   }),
 
   bundler: viteBundler(),

@@ -1,5 +1,5 @@
 import comp from "D:/blogs/vuepress-starter/docs/.vuepress/.temp/pages/get-started.html.vue"
-const data = JSON.parse("{\"path\":\"/get-started.html\",\"title\":\"Get Started\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"headers\":[{\"level\":2,\"title\":\"Pages\",\"slug\":\"pages\",\"link\":\"#pages\",\"children\":[]},{\"level\":2,\"title\":\"Content\",\"slug\":\"content\",\"link\":\"#content\",\"children\":[]},{\"level\":2,\"title\":\"Configuration\",\"slug\":\"configuration\",\"link\":\"#configuration\",\"children\":[]},{\"level\":2,\"title\":\"Layouts and customization\",\"slug\":\"layouts-and-customization\",\"link\":\"#layouts-and-customization\",\"children\":[]}],\"git\":{\"updatedTime\":1718369133000,\"contributors\":[{\"name\":\"杀死一只知更鸟\",\"email\":\"robindebug@163.com\",\"commits\":1}]},\"filePathRelative\":\"get-started.md\"}")
+const data = JSON.parse("{\"path\":\"/get-started.html\",\"title\":\"快速开始\",\"lang\":\"zh-CN\",\"frontmatter\":{},\"headers\":[],\"git\":{\"updatedTime\":1718369133000,\"contributors\":[{\"name\":\"杀死一只知更鸟\",\"email\":\"robindebug@163.com\",\"commits\":1}]},\"filePathRelative\":\"get-started.md\"}")
 export { comp, data }
 
 if (import.meta.webpackHot) {
