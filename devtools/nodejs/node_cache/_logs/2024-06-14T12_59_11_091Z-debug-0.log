@@ -1,0 +1,31 @@
+0 verbose cli D:\devtools\nodejs\node.exe D:\devTools\nodejs\node_global\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.1
+2 info using node@v18.18.0
+3 silly config load:file:D:\devTools\nodejs\node_global\node_modules\npm\npmrc
+4 silly config load:file:D:\blogs\vuepress-starter\.npmrc
+5 silly config load:file:C:\Users\robin\.npmrc
+6 silly config load:file:D:\devTools\nodejs\node_global\etc\npmrc
+7 verbose title npm run dev
+8 verbose argv "run" "dev"
+9 verbose logfile logs-max:10 dir:D:\blogs\vuepress-starter\devtools\nodejs\node_cache\_logs\2024-06-14T12_59_11_091Z-
+10 verbose logfile D:\blogs\vuepress-starter\devtools\nodejs\node_cache\_logs\2024-06-14T12_59_11_091Z-debug-0.log
+11 silly logfile done cleaning log files
+12 verbose stack Error: Missing script: "dev"
+12 verbose stack
+12 verbose stack To see a list of scripts, run:
+12 verbose stack   npm run
+12 verbose stack     at #run (D:\devTools\nodejs\node_global\node_modules\npm\lib\commands\run-script.js:110:13)
+12 verbose stack     at async RunScript.exec (D:\devTools\nodejs\node_global\node_modules\npm\lib\commands\run-script.js:39:7)
+12 verbose stack     at async Npm.exec (D:\devTools\nodejs\node_global\node_modules\npm\lib\npm.js:207:9)
+12 verbose stack     at async module.exports (D:\devTools\nodejs\node_global\node_modules\npm\lib\cli\entry.js:74:5)
+13 error Missing script: "dev"
+13 error
+13 error To see a list of scripts, run:
+13 error   npm run
+14 verbose cwd D:\blogs\vuepress-starter
+15 verbose os Windows_NT 10.0.22631
+16 verbose node v18.18.0
+17 verbose npm  v10.8.1
+18 verbose exit 1
+19 verbose code 1
+20 error A complete log of this run can be found in: D:\blogs\vuepress-starter\devtools\nodejs\node_cache\_logs\2024-06-14T12_59_11_091Z-debug-0.log

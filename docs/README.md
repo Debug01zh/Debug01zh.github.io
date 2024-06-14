@@ -1,14 +1,14 @@
 ---
 home: true
-title: Home
+title: 首页
 heroImage: https://vuejs.press/images/hero.png
 actions:
-  - text: Get Started
+  - text: 快速开始
     link: /getting-started.html
     type: primary
 
-  - text: Introduction
-    link: https://vuejs.press/guide/introduction.html
+  - text: 介绍
+    link: /introduction.html
     type: secondary
 
 features:
@@ -25,9 +25,8 @@ features:
   - title: Bundlers
     details: Default bundler is Vite, while Webpack is also supported. Choose the one you like!
 
-footer: MIT Licensed | Copyright © 2018-present VuePress Community
+footer: MIT Licensed | Copyright © 2024-present waitpy.online
 ---
 
-This is the content of home page. Check [Home Page Docs][default-theme-home] for more details.
 
 [default-theme-home]: https://vuejs.press/reference/default-theme/frontmatter.html#home-page

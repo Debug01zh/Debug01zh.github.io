@@ -6,7 +6,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
 
   title: '一隅清欢',
-  description: 'My first VuePress Site',
+  description: '一个小菜鸟的记录',
 
   // 仓库地址
   base: '/Debug01zh.github.io/',

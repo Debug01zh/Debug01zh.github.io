@@ -1,0 +1,18 @@
+0 verbose cli D:\devtools\nodejs\node.exe D:\devTools\nodejs\node_global\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.1
+2 info using node@v18.18.0
+3 silly config load:file:D:\devTools\nodejs\node_global\node_modules\npm\npmrc
+4 silly config load:file:D:\blogs\vuepress-starter\.npmrc
+5 silly config load:file:C:\Users\robin\.npmrc
+6 silly config load:file:D:\devTools\nodejs\node_global\etc\npmrc
+7 verbose title npm docs:dev
+8 verbose argv "docs:dev"
+9 verbose logfile logs-max:10 dir:D:\blogs\vuepress-starter\devtools\nodejs\node_cache\_logs\2024-06-14T12_59_24_802Z-
+10 verbose logfile D:\blogs\vuepress-starter\devtools\nodejs\node_cache\_logs\2024-06-14T12_59_24_802Z-debug-0.log
+11 silly logfile done cleaning log files
+12 verbose cwd D:\blogs\vuepress-starter
+13 verbose os Windows_NT 10.0.22631
+14 verbose node v18.18.0
+15 verbose npm  v10.8.1
+16 verbose exit 1
+17 verbose code 1
