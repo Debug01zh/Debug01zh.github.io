@@ -1,29 +1,23 @@
 ---
 home: true
 title: 首页
-heroImage: https://vuejs.press/images/hero.png
+heroImage: /images/avatar.png
 actions:
-  - text: 快速开始
-    link: /getting-started.html
+  - text: 本站介绍
+    link: /introduction.html
     type: primary
 
-  - text: 介绍
-    link: /introduction.html
+  - text: 博客🐳
+    link: https://www.robindeblog.cn
     type: secondary
 
 features:
-  - title: Simplicity First
-    details: Minimal setup with markdown-centered project structure helps you focus on writing.
-  - title: Vue-Powered
-    details: Enjoy the dev experience of Vue, use Vue components in markdown, and develop custom themes with Vue.
-  - title: Performant
-    details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-  - title: Themes
-    details: Providing a default theme out of the box. You can also choose a community theme or create your own one.
-  - title: Plugins
-    details: Flexible plugin API, allowing plugins to provide lots of plug-and-play features for your site.
-  - title: Bundlers
-    details: Default bundler is Vite, while Webpack is also supported. Choose the one you like!
+  - title: 学习 📚
+    details: 书山有路勤为径，学海无涯苦作舟。
+  - title: 总结 📔
+    details: 前事不忘，后事之师。
+  - title: 探索 🔍
+    details: 路漫漫其修远兮，吾将上下而求索。
 
 footer: MIT Licensed | Copyright © 2024-present waitpy.online
 ---
