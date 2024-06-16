@@ -1,0 +1,337 @@
+<template><div><h2 id="基础语法" tabindex="-1"><a class="header-anchor" href="#基础语法"><span>基础语法</span></a></h2>
+<h3 id="一段c-程序" tabindex="-1"><a class="header-anchor" href="#一段c-程序"><span>一段C#程序</span></a></h3>
+<p>一个C#程序主要包括：</p>
+<ul>
+<li>命名空间 namespace</li>
+<li>类关键字 class</li>
+<li>方法</li>
+<li>属性</li>
+<li>main方法</li>
+</ul>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">namespace</span> <span class="token namespace">Test</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">class</span> <span class="token class-name">Demo1</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String<span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"111"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">            </span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="数据类型" tabindex="-1"><a class="header-anchor" href="#数据类型"><span>数据类型</span></a></h3>
+<p>C#中变量的数据类型分为三种：</p>
+<ul>
+<li>值类型：bool,byte,char,decimal,double,float,int,long,sbyte,short,uint,ulong,ushort
+<ul>
+<li>通过 <code v-pre>sizeof(xxx)</code>获取数据类型的存储空间</li>
+</ul>
+</li>
+<li>引用类型：object,dynamic（动态类型）,string,
+<ul>
+<li>装箱操作：值类型 → 对象类型</li>
+<li>拆箱操作：对象类型→ 值类型</li>
+</ul>
+</li>
+<li>指针类型 ：type* 指针名</li>
+</ul>
+<h3 id="类型转换" tabindex="-1"><a class="header-anchor" href="#类型转换"><span>类型转换</span></a></h3>
+<p>类型转换：</p>
+<ul>
+<li>隐式类型转换：小范围数据类型→大范围数据类型</li>
+<li>显示类型转换：大范围数据类型→小范围数据类型。<code v-pre>int i = 10;byte b =(byte)i;</code></li>
+</ul>
+<p>类型转换方法：</p>
+<ul>
+<li>C# 提供了一些内置的类型转换（使用<code v-pre>System.Convert</code>类中的函数完成）。</li>
+<li>使用 <code v-pre>Parse</code>方法将字符串转换为对应的数值类型，失败则抛出异常<code v-pre>string str = &quot;111.22&quot;; double d = double.Parse(str);</code></li>
+<li>使用<code v-pre>TryParse</code>方法，失败不会抛出异常，但是会返回一个布尔值，表示当前是否转换成功。</li>
+<li>自定义类型转换：待补充</li>
+</ul>
+<h3 id="变量和常量" tabindex="-1"><a class="header-anchor" href="#变量和常量"><span>变量和常量</span></a></h3>
+<p>变量的定义：<code v-pre>数据类型 变量名;</code><br />常量的定义：<code v-pre>const 数据类型 常量名 = 常量值;</code></p>
+<h3 id="运算符" tabindex="-1"><a class="header-anchor" href="#运算符"><span>运算符</span></a></h3>
+<ul>
+<li>算术运算符 ...</li>
+<li>关系运算符 ...</li>
+<li>逻辑运算符 ...</li>
+<li>位运算符 ...</li>
+<li>赋值运算符 ...</li>
+<li>其他运算符：
+<ul>
+<li><code v-pre>sizeof()</code>返回数据类型的大小</li>
+<li><code v-pre>typeof()</code>返回class的类型</li>
+<li><code v-pre>&amp;</code>返回变量的地址</li>
+<li><code v-pre>*</code>变量的指针</li>
+<li><code v-pre>?:</code>三元表达式</li>
+<li><code v-pre>is</code>判断对象是否为某一类型</li>
+<li><code v-pre>as</code>强制转换，即使转换失败也不会抛出异常、</li>
+</ul>
+</li>
+</ul>
+<h3 id="判断" tabindex="-1"><a class="header-anchor" href="#判断"><span>判断</span></a></h3>
+<ul>
+<li>if</li>
+<li>if...else</li>
+<li>if 嵌套</li>
+<li>switch</li>
+<li>switch 嵌套</li>
+<li>?: 三元表达式</li>
+</ul>
+<h3 id="循环" tabindex="-1"><a class="header-anchor" href="#循环"><span>循环</span></a></h3>
+<ul>
+<li>while</li>
+<li>for ：<code v-pre>for(; ;){xxxxx}</code> 无限循环。</li>
+<li>for each</li>
+<li>do...while</li>
+<li>嵌套循环</li>
+<li>循环控制语句：
+<ul>
+<li>break</li>
+<li>continue</li>
+</ul>
+</li>
+</ul>
+<h3 id="访问控制权限" tabindex="-1"><a class="header-anchor" href="#访问控制权限"><span>访问控制权限</span></a></h3>
+<ul>
+<li>public：任何公有成员可以被外部的类访问。</li>
+<li>private ：只有同一个类中的函数可以访问它的私有成员。</li>
+<li>portected ：该类内部和继承类中可以访问。</li>
+<li>internal: 同一个程序集的对象可以访问。</li>
+<li>portected internal：portected  和 internal 的并集，符合任意一条都可以访问。</li>
+</ul>
+<h3 id="方法" tabindex="-1"><a class="header-anchor" href="#方法"><span>方法</span></a></h3>
+<p>方法的定义格式：</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line">访问控制修饰符 	返回值类型 	方法名称<span class="token punctuation">(</span>参数列表<span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    方法体</span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> <span class="token function">GetStr</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span></span> a<span class="token punctuation">,</span><span class="token class-name"><span class="token keyword">string</span></span> b<span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">return</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>参数传递分为三种情况：</p>
+<ul>
+<li>值传递：上面的例子就是值传递，在此种情况下，每次调用该方法是，会为每个值参数创建一个新的存储位置。</li>
+<li>引用传递：通过<code v-pre>ref</code>关键字，声明引用参数</li>
+<li>返回值传递（类似SQL触发器,可以将方法返回值通过参数输出）：使用<code v-pre>out</code>关键字</li>
+</ul>
+<h3 id="可空类型-nullable" tabindex="-1"><a class="header-anchor" href="#可空类型-nullable"><span>可空类型 Nullable</span></a></h3>
+<p>单问号<code v-pre>?</code> ，对<code v-pre>int,double,bool</code>等无法直接赋值为null的数据类型进行null的赋值。</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token class-name"><span class="token keyword">int</span></span> i1<span class="token punctuation">;</span> <span class="token comment">// 默认值0</span></span>
+<span class="line"><span class="token class-name"><span class="token keyword">int</span><span class="token punctuation">?</span></span> i2<span class="token punctuation">;</span> <span class="token comment">// 默认值为null</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>双问号<code v-pre>??</code>用于判断一个变量在为null的时候返回一个指定的值。</p>
+<blockquote>
+<p>可以理解为三元表达式的简化形式， <code v-pre>??</code> 左值不为空，那么返回左值，左值为空返回右值</p>
+</blockquote>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token class-name"><span class="token keyword">double</span><span class="token punctuation">?</span></span> num1 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token class-name"><span class="token keyword">double</span></span> num2 <span class="token operator">=</span> num1 <span class="token operator">??</span> <span class="token number">5.34</span><span class="token punctuation">;</span> <span class="token comment">// 当num1为空值null时则返回5.34,不为空时返回num1的值</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="数组-array" tabindex="-1"><a class="header-anchor" href="#数组-array"><span>数组 Array</span></a></h3>
+<blockquote>
+<p><em>数组是一个存储相同类型元素的固定大小的顺序集合。数组是用来存储数据的集合，通常认为数组是一个同一类型变量的集合。</em></p>
+</blockquote>
+<p>声明数组：<code v-pre>数据类型[] 数组名;</code><br />初始化数组：<code v-pre>数据类型[] 数组名 = new 数据类型[数组长度];</code><br />初始化并赋值数组：<code v-pre>数据类型[] 数组名 = new 数据类型[数组长度]{数组元素集合...};</code><br />访问数组元素：通过索引下标进行访问，如<code v-pre>int a = arr1[0];// 方位arr1数组中的第一个元素</code><br />循环遍历数组：</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"></span>
+<span class="line"><span class="token class-name"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> arr1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">arr1</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// 普通for</span></span>
+<span class="line"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr1<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"当前元素的索引:"</span><span class="token operator">+</span>i<span class="token operator">+</span><span class="token string">"值:"</span><span class="token operator">+</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// foreach</span></span>
+<span class="line"><span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> item <span class="token keyword">in</span> arr1<span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">   Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"当前元素的索引:"</span><span class="token operator">+</span>i<span class="token operator">+</span><span class="token string">"值:"</span><span class="token operator">+</span>arr1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="字符串" tabindex="-1"><a class="header-anchor" href="#字符串"><span>字符串</span></a></h3>
+<p>使用<code v-pre>string</code>关键字来声明一个字符串变量。</p>
+<blockquote>
+<p>基本和其他高级语言一致....</p>
+</blockquote>
+<h3 id="结构体" tabindex="-1"><a class="header-anchor" href="#结构体"><span>结构体</span></a></h3>
+<p>结构体，没错！就是<code v-pre>c语言</code>中的结构体😂</p>
+<p>结构体定义格式，使用<code v-pre>Struct</code>关键字来定义，如下：</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token keyword">struct</span> <span class="token class-name">Books</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token class-name"><span class="token keyword">string</span></span> title<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token class-name"><span class="token keyword">string</span></span> author<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token class-name"><span class="token keyword">string</span></span> subject<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token class-name"><span class="token keyword">int</span></span> book_id<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>Tips：结构体中声明的字段无法赋初值</p>
+</blockquote>
+<p>使用方式和类使用对象差不多：</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token comment">// 声明一个结构体</span></span>
+<span class="line">    <span class="token class-name">Books</span> book1<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token comment">// 为其中的属性进行赋值</span></span>
+<span class="line">    book1<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">"平凡的世界"</span><span class="token punctuation">;</span></span>
+<span class="line">    book1<span class="token punctuation">.</span>author <span class="token operator">=</span> <span class="token string">"路遥"</span><span class="token punctuation">;</span></span>
+<span class="line">    book1<span class="token punctuation">.</span>subject <span class="token operator">=</span> <span class="token string">"文学"</span><span class="token punctuation">;</span></span>
+<span class="line">    book1<span class="token punctuation">.</span>book_id <span class="token operator">=</span> <span class="token number">111</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token comment">/* 打印 Book1 信息 */</span></span>
+<span class="line">    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span> <span class="token string">"book1 1 title : {0}"</span><span class="token punctuation">,</span> book1<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"book 1 author : {0}"</span><span class="token punctuation">,</span> book1<span class="token punctuation">.</span>author<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"book 1 subject : {0}"</span><span class="token punctuation">,</span> book1<span class="token punctuation">.</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"book 1 book_id :{0}"</span><span class="token punctuation">,</span> book1<span class="token punctuation">.</span>book_id<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="类和结构体对比" tabindex="-1"><a class="header-anchor" href="#类和结构体对比"><span>类和结构体对比</span></a></h4>
+<blockquote>
+<p>待补充....</p>
+</blockquote>
+<h3 id="枚举" tabindex="-1"><a class="header-anchor" href="#枚举"><span>枚举</span></a></h3>
+<p>枚举定义（默认情况下，第一个枚举值为0，然后依次递增..当然自己也可以定义默认值）</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token keyword">enum</span> 枚举名称</span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    枚举值<span class="token range operator">..</span><span class="token range operator">..</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token keyword">enum</span> <span class="token class-name">Day</span> <span class="token punctuation">{</span>Sun<span class="token punctuation">,</span> Mon<span class="token punctuation">,</span> Tue<span class="token punctuation">,</span> Wed<span class="token punctuation">,</span> Thu<span class="token punctuation">,</span> Fri<span class="token punctuation">,</span> Sat<span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// 0 1 2 3 4 5 6</span></span>
+<span class="line"><span class="token keyword">enum</span> <span class="token class-name">Color</span> <span class="token punctuation">{</span>red<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>blue<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">,</span>green<span class="token operator">=</span><span class="token number">11</span><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token class-name"><span class="token keyword">int</span></span> x <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>Day<span class="token punctuation">.</span>Sun<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token class-name"><span class="token keyword">int</span></span> y <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>Day<span class="token punctuation">.</span>Fri<span class="token punctuation">;</span></span>
+<span class="line">    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Sun = {0}"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Fri = {0}"</span><span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span> </span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="面向对象" tabindex="-1"><a class="header-anchor" href="#面向对象"><span>面向对象</span></a></h3>
+<h4 id="类" tabindex="-1"><a class="header-anchor" href="#类"><span>类</span></a></h4>
+<p>类的定义格式（类的默认访问标识符是 <strong>internal</strong>，成员的默认访问标识符是 <strong>private</strong>。）：</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line">访问控制权限 <span class="token keyword">class</span> 类名</span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    访问控制权限 数据类型 成员变量<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token range operator">..</span><span class="token punctuation">.</span></span>
+<span class="line"></span>
+<span class="line">    访问控制权限 返回值类型 成员方法名<span class="token punctuation">(</span>参数列表<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token comment">// 方法体</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token range operator">..</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>构造函数：与类名同名的成员函数，当创建类的新对象时执行。（类中提供一个默认的构造函数，没有任何参数。）</p>
+<p>使用<code v-pre>static</code>定义的类成员变量，无论有多少个对象被创建，只会有一个该静态成员的副本。</p>
+<h4 id="继承" tabindex="-1"><a class="header-anchor" href="#继承"><span>继承</span></a></h4>
+<p>一个类可以继承自另一个类，被称为基类（父类）和派生类（子类）。</p>
+<ul>
+<li>C# 不支持类的多重继承，但支持接口的多重继承，一个类可以实现多个接口。</li>
+<li>派生类会继承基类的成员（字段、方法、属性等），除非它们被明确地标记为私有（private）。</li>
+<li>派生类可以通过关键字<code v-pre>base</code>来调用基类的构造函数和方法。</li>
+</ul>
+<p>继承的写法（伪代码）：</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line">访问控制修饰符 <span class="token keyword">class</span> 基类名</span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token range operator">..</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">class</span> 派生类 <span class="token punctuation">:</span> 基类</span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token range operator">..</span><span class="token punctuation">.</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>:::info
+子类只需要在类名后面写上<code v-pre>: 要继承的父类</code>即可
+:::</p>
+<h4 id="继承接口" tabindex="-1"><a class="header-anchor" href="#继承接口"><span>继承接口</span></a></h4>
+<p>接口通过关键字 <code v-pre>interface</code>来定义，是一组行为的抽象，不提供方法的实现。<br />一个接口可以继承自一个或多个其他接口，派生接口继承了基接口的所有成员。派生接口可以扩展基接口的成员列表，但不能改变它们的访问修饰符。</p>
+<p>继承接口的写法（和类继承一样的写法）：</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token comment">// 基接口  父接口</span></span>
+<span class="line"><span class="token keyword">interface</span> <span class="token class-name">IBaseInterface</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// 派生接口  子接口</span></span>
+<span class="line"><span class="token keyword">interface</span> <span class="token class-name">IDerivedInterface</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IBaseInterface</span></span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="实现接口" tabindex="-1"><a class="header-anchor" href="#实现接口"><span>实现接口</span></a></h4>
+<p>类实现接口，需要重写（提供）接口中定义的所有方法。<br />类实现接口的写法，和类继承写法一致<code v-pre>:要实现的接口</code></p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token comment">// 如下面的Test类实现了上面的 IDerivedInterface 接口，</span></span>
+<span class="line"><span class="token comment">// 则需要重写Method1(),Method2()两个方法 </span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IDerivedInterface</span></span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Method1 implementation"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Method2</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Method2 implementation"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="继承抽象类" tabindex="-1"><a class="header-anchor" href="#继承抽象类"><span>继承抽象类</span></a></h4>
+<p>抽象类通过关键字<code v-pre>abstract</code>来定义，<strong>抽象类</strong>包含抽象方法，抽象方法可被派生类实现。</p>
+<ul>
+<li>抽象类不能<code v-pre>new</code>实例对象</li>
+<li>含有抽象方法的一定是抽象类</li>
+<li>抽象类不能被声明为<code v-pre>sealed 密封类</code>（密封类不能被继承）</li>
+</ul>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Shape</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">abstract</span> <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">Rectangle</span><span class="token punctuation">:</span>  <span class="token type-list"><span class="token class-name">Shape</span></span></span>
+<span class="line">   <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">int</span></span> length<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">int</span></span> width<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token function">Rectangle</span><span class="token punctuation">(</span> <span class="token class-name"><span class="token keyword">int</span></span> a<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">int</span></span> b<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        length <span class="token operator">=</span> a<span class="token punctuation">;</span></span>
+<span class="line">        width <span class="token operator">=</span> b<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> area <span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Rectangle 类的面积："</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">return</span> <span class="token punctuation">(</span>width <span class="token operator">*</span> length<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="多态性" tabindex="-1"><a class="header-anchor" href="#多态性"><span>多态性</span></a></h4>
+<ul>
+<li>静态多态性：函数的响应在编译时发生（<em>tips:当你的语法写错时，编辑器会编译飘红</em>）
+<ul>
+<li>函数重载 ： 一个类中存在多个同名的函数，函数的参数类型不同，个数不同，返回值类型不同，这就是重、函数重载 。</li>
+<li>运算符重载：重载运算符是具有特殊名称的函数，是通过关键字 <strong>operator</strong> 后跟运算符的符号来定义的。与其他函数一样，重载运算符有返回类型和参数列表。(如下面的代码段)</li>
+</ul>
+</li>
+<li>动态多态性：函数的响应在运行时发生
+<ul>
+<li>函数重写：即当子类继承父类，或者子类继承某个抽象父类，或类实现某些抽象接口时，重写函数，提供函数方法体。</li>
+</ul>
+</li>
+</ul>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token comment">// 重载 + 运算符来把两个 Box 对象相加</span></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">static</span> Box <span class="token keyword">operator</span><span class="token operator">+</span> <span class="token punctuation">(</span><span class="token class-name">Box</span> b<span class="token punctuation">,</span> <span class="token class-name">Box</span> c<span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token class-name">Box</span> box <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Box</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    box<span class="token punctuation">.</span>length <span class="token operator">=</span> b<span class="token punctuation">.</span>length <span class="token operator">+</span> c<span class="token punctuation">.</span>length<span class="token punctuation">;</span></span>
+<span class="line">    box<span class="token punctuation">.</span>breadth <span class="token operator">=</span> b<span class="token punctuation">.</span>breadth <span class="token operator">+</span> c<span class="token punctuation">.</span>breadth<span class="token punctuation">;</span></span>
+<span class="line">    box<span class="token punctuation">.</span>height <span class="token operator">=</span> b<span class="token punctuation">.</span>height <span class="token operator">+</span> c<span class="token punctuation">.</span>height<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">return</span> box<span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+
+

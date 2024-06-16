@@ -3,6 +3,7 @@ export const redirects = JSON.parse("{}")
 export const routes = Object.fromEntries([
   ["/introduction.html", { loader: () => import(/* webpackChunkName: "introduction.html" */"D:/blogs/vuepress-starter/docs/.vuepress/.temp/pages/introduction.html.js"), meta: {"title":"本站介绍"} }],
   ["/", { loader: () => import(/* webpackChunkName: "index.html" */"D:/blogs/vuepress-starter/docs/.vuepress/.temp/pages/index.html.js"), meta: {"title":"首页"} }],
+  ["/csharp/csharp01.html", { loader: () => import(/* webpackChunkName: "csharp_csharp01.html" */"D:/blogs/vuepress-starter/docs/.vuepress/.temp/pages/csharp/csharp01.html.js"), meta: {"title":""} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"D:/blogs/vuepress-starter/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
 ]);
 

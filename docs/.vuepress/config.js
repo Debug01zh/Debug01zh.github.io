@@ -26,7 +26,7 @@ export default defineUserConfig({
         text: '后端技术',
         children: [
           {text:'Java',link:'Java01.md'},
-          {text:'C#',link:'C#01.md'},
+          {text:'C#',link:'/csharp/csharp01.md'},
         ],
       },
     ],
