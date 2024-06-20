@@ -29,6 +29,14 @@ export default defineUserConfig({
           {text:'C#',link:'/csharp/csharp01.md'},
         ],
       },
+      {
+        text: '随想随记',
+        children:[
+          {text:'实习',link:'/实习/实习01.md'
+
+          }
+        ]
+      }
     ],
   }),
 
