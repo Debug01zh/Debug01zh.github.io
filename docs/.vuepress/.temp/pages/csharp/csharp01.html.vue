@@ -332,6 +332,414 @@
 <span class="line">    <span class="token keyword">return</span> box<span class="token punctuation">;</span></span>
 <span class="line"><span class="token punctuation">}</span></span>
 <span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="异常处理" tabindex="-1"><a class="header-anchor" href="#异常处理"><span>异常处理</span></a></h3>
+<p><em>C# 异常处理时建立在四个关键词之上的：<strong>try</strong>、<strong>catch</strong>、<strong>finally</strong> 和 <strong>throw</strong>。</em></p>
+<ul>
+<li><strong>try</strong>：一个 try 块标识了一个将被激活的特定的异常的代码块。后跟一个或多个 catch 块。</li>
+<li><strong>catch</strong>：程序通过异常处理程序捕获异常。catch 关键字表示异常的捕获。</li>
+<li><strong>finally</strong>：finally 块用于执行给定的语句，不管异常是否被抛出都会执行。例如，如果您打开一个文件，不管是否出现异常文件都要被关闭。</li>
+<li><strong>throw</strong>：当问题出现时，程序抛出一个异常。使用 throw 关键字来完成。</li>
+</ul>
+<p>System.Exception:</p>
+<ul>
+<li>System.ApplicationException  应用程序生成的异常，所有自定义异常都派生于该类</li>
+<li>System.SystemException 预定义的系统异常的基类：
+<ul>
+<li>System.IO.IOException 处理 I/O 错误。</li>
+<li>System.IndexOutOfRangeException 处理当方法指向超出范围的数组索引时生成的错误。</li>
+<li>System.ArrayTypeMismatchException 处理数组类型不匹配时生成的异常</li>
+<li>System.NullReferenceException 处理空引用对象生成的异常</li>
+<li>System.DivideByZeroException 处理零除异常</li>
+<li>System.InvalidCastException 处理在类型转换期间生成的错误</li>
+<li>System.OutOfMemoryException 处理空闲内存不足生成的错误</li>
+<li>System.StackOverflowException 处理栈溢出生成的错误</li>
+</ul>
+</li>
+</ul>
+<h4 id="用户自定义异常-待补充" tabindex="-1"><a class="header-anchor" href="#用户自定义异常-待补充"><span>用户自定义异常（待补充）</span></a></h4>
+<h3 id="文件操作" tabindex="-1"><a class="header-anchor" href="#文件操作"><span>文件操作</span></a></h3>
+<h3 id="特性-注解" tabindex="-1"><a class="header-anchor" href="#特性-注解"><span>特性（注解）</span></a></h3>
+<blockquote>
+<p>特性是用于在运行时传递程序中各种元素（如：类、方法、结构、枚举、组件等）的行为信息的声明性标签。</p>
+</blockquote>
+<p>语法格式：</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token punctuation">[</span>特性名<span class="token punctuation">(</span>必填参数<span class="token punctuation">,</span>可选参数<span class="token punctuation">)</span><span class="token punctuation">]</span></span>
+<span class="line">元素</span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>预定义特性（元注解）：</p>
+<ul>
+<li>AttributeUsage：规定特性可应用到的项目的类型</li>
+<li>Conditional：条件特性，哪些情况下该特性生效去使用</li>
+<li>Obsolete：过时特性，标记哪些方法是过时的，应该使用新的方法函数。</li>
+</ul>
+<h4 id="arrtibuteusage-属性代理标记" tabindex="-1"><a class="header-anchor" href="#arrtibuteusage-属性代理标记"><span>ArrtibuteUsage 属性代理标记</span></a></h4>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">ArrtibuteUsage</span><span class="token attribute-arguments"><span class="token punctuation">(</span></span>
+<span class="line">    validon<span class="token punctuation">,</span> <span class="token comment">// 规定特性可以被放置在哪些元素上</span></span>
+<span class="line">    AllowMutiple<span class="token operator">=</span>allowmutiple<span class="token punctuation">,</span> <span class="token comment">// 是否为多用的  true | false，指定是否可以在同一程序元素（类，方法，字段）上多次使用此特性</span></span>
+<span class="line">    Inherited<span class="token operator">=</span>inherited <span class="token comment">// 特性是否可以被派生类继承</span></span>
+<span class="line"><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>例如：</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">AttributeUsage</span><span class="token attribute-arguments"><span class="token punctuation">(</span>AttributeTargets<span class="token punctuation">.</span>Class <span class="token operator">|</span></span>
+<span class="line">AttributeTargets<span class="token punctuation">.</span>Constructor <span class="token operator">|</span></span>
+<span class="line">AttributeTargets<span class="token punctuation">.</span>Field <span class="token operator">|</span></span>
+<span class="line">AttributeTargets<span class="token punctuation">.</span>Method <span class="token operator">|</span></span>
+<span class="line">AttributeTargets<span class="token punctuation">.</span>Property<span class="token punctuation">,</span> </span>
+<span class="line">AllowMultiple <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// 此特性可以被放置在类上，构造器上、字段上、方法上、属性上(貌似是提供了set,get的字段)、是多用的</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="contional-条件标记" tabindex="-1"><a class="header-anchor" href="#contional-条件标记"><span>Contional 条件标记</span></a></h4>
+<p>此特性用于标注，当哪些条件下，去执行</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Conditional</span><span class="token attribute-arguments"><span class="token punctuation">(</span></span>
+<span class="line">    conditionalSymbol <span class="token comment">// 条件，如：Debug | Trace</span></span>
+<span class="line"><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Conditional</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token string">"DEBUG"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="obsolete-过时标记" tabindex="-1"><a class="header-anchor" href="#obsolete-过时标记"><span>Obsolete 过时标记</span></a></h4>
+<p>此特性用于标记一些不应该被使用的程序实体</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token comment">// 写法一：</span></span>
+<span class="line"><span class="token punctuation">[</span><span class="token function">Obsolete</span><span class="token punctuation">(</span></span>
+<span class="line">    messsage <span class="token comment">// 字符串，描述项目为什么过时以及该替代使用什么。</span></span>
+<span class="line"><span class="token punctuation">)</span><span class="token punctuation">]</span> </span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// 写法二：</span></span>
+<span class="line"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Obsolte</span><span class="token attribute-arguments"><span class="token punctuation">(</span></span>
+<span class="line">    message<span class="token punctuation">,</span></span>
+<span class="line">    iserror <span class="token comment">// 布尔值true|false 当为true时，编译器会提示错误。默认是false,会有一个警告</span></span>
+<span class="line"><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="创建自定义特性" tabindex="-1"><a class="header-anchor" href="#创建自定义特性"><span>创建自定义特性</span></a></h4>
+<p>创建并使用自定义特性的步骤：</p>
+<ol>
+<li>声明自定义特性</li>
+<li>构建自定义特性</li>
+<li>在目标程序元素上应用自定义特性</li>
+<li>通过反射访问特性</li>
+</ol>
+<p>自定义一个BugFix特性，用于存储调试程序获得的信息</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token comment">// 一个自定义特性 BugFix 被赋给类及其成员</span></span>
+<span class="line"><span class="token punctuation">[</span><span class="token function">AttributeUsage</span><span class="token punctuation">(</span>AttributeTargets<span class="token punctuation">.</span>Class <span class="token operator">|</span></span>
+<span class="line">AttributeTargets<span class="token punctuation">.</span>Constructor <span class="token operator">|</span></span>
+<span class="line">AttributeTargets<span class="token punctuation">.</span>Field <span class="token operator">|</span></span>
+<span class="line">AttributeTargets<span class="token punctuation">.</span>Method <span class="token operator">|</span></span>
+<span class="line">AttributeTargets<span class="token punctuation">.</span>Property<span class="token punctuation">,</span></span>
+<span class="line">AllowMultiple <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DeBugInfo</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">System<span class="token punctuation">.</span>Attribute</span></span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">int</span></span> bugNo<span class="token punctuation">;</span> <span class="token comment">// bug的代码编号</span></span>
+<span class="line">  <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">string</span></span> developer<span class="token punctuation">;</span> <span class="token comment">// 开发人员的名字</span></span>
+<span class="line">  <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">string</span></span> lastReview<span class="token punctuation">;</span> <span class="token comment">// 最后一次审查代码的日期</span></span>
+<span class="line">  <span class="token keyword">public</span> <span class="token class-name"><span class="token keyword">string</span></span> message<span class="token punctuation">;</span> <span class="token comment">// 消息提示</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token keyword">public</span> <span class="token function">DeBugInfo</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> bg<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">string</span></span> dev<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">string</span></span> d<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>bugNo <span class="token operator">=</span> bg<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>developer <span class="token operator">=</span> dev<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token keyword">this</span><span class="token punctuation">.</span>lastReview <span class="token operator">=</span> d<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> BugNo</span>
+<span class="line">  <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token keyword">get</span></span>
+<span class="line">      <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token keyword">return</span> bugNo<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Developer</span>
+<span class="line">  <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token keyword">get</span></span>
+<span class="line">      <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token keyword">return</span> developer<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> LastReview</span>
+<span class="line">  <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token keyword">get</span></span>
+<span class="line">      <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token keyword">return</span> lastReview<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Message</span>
+<span class="line">  <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token keyword">get</span></span>
+<span class="line">      <span class="token punctuation">{</span></span>
+<span class="line">          <span class="token keyword">return</span> message<span class="token punctuation">;</span></span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">      <span class="token keyword">set</span></span>
+<span class="line">      <span class="token punctuation">{</span></span>
+<span class="line">          message <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span></span>
+<span class="line">      <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用自定义特性</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">DeBugInfo</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">,</span> <span class="token string">"Zara Ali"</span><span class="token punctuation">,</span> <span class="token string">"12/8/2012"</span><span class="token punctuation">,</span> Message <span class="token operator">=</span> <span class="token string">"Return type mismatch"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span></span>
+<span class="line"><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">DeBugInfo</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token number">49</span><span class="token punctuation">,</span> <span class="token string">"Nuha Ali"</span><span class="token punctuation">,</span> <span class="token string">"10/10/2012"</span><span class="token punctuation">,</span> Message <span class="token operator">=</span> <span class="token string">"Unused variable"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">Rectangle</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">  <span class="token comment">// 成员变量</span></span>
+<span class="line">  <span class="token keyword">protected</span> <span class="token class-name"><span class="token keyword">double</span></span> length<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">protected</span> <span class="token class-name"><span class="token keyword">double</span></span> width<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">public</span> <span class="token function">Rectangle</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">double</span></span> l<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">double</span></span> w<span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">{</span></span>
+<span class="line">      length <span class="token operator">=</span> l<span class="token punctuation">;</span></span>
+<span class="line">      width <span class="token operator">=</span> w<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">DeBugInfo</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token number">55</span><span class="token punctuation">,</span> <span class="token string">"Zara Ali"</span><span class="token punctuation">,</span> <span class="token string">"19/10/2012"</span><span class="token punctuation">,</span></span>
+<span class="line">  Message <span class="token operator">=</span> <span class="token string">"Return type mismatch"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span></span>
+<span class="line">  <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">double</span></span> <span class="token function">GetArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">{</span></span>
+<span class="line">      <span class="token keyword">return</span> length <span class="token operator">*</span> width<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line">  <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">DeBugInfo</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token number">56</span><span class="token punctuation">,</span> <span class="token string">"Zara Ali"</span><span class="token punctuation">,</span> <span class="token string">"19/10/2012"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span></span>
+<span class="line">  <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">  <span class="token punctuation">{</span></span>
+<span class="line">      Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Length: {0}"</span><span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Width: {0}"</span><span class="token punctuation">,</span> width<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">      Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Area: {0}"</span><span class="token punctuation">,</span> <span class="token function">GetArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>获取查看类特性</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token keyword">class</span> <span class="token class-name">ExecuteRectangle</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token class-name">Rectangle</span> r <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Rectangle</span><span class="token punctuation">(</span><span class="token number">4.5</span><span class="token punctuation">,</span> <span class="token number">7.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        r<span class="token punctuation">.</span><span class="token function">Display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token class-name">Type</span> type <span class="token operator">=</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">Rectangle</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token comment">// 遍历 Rectangle 类的特性</span></span>
+<span class="line">        <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name">Object</span> attributes <span class="token keyword">in</span> type<span class="token punctuation">.</span><span class="token function">GetCustomAttributes</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token class-name">DeBugInfo</span> dbi <span class="token operator">=</span> <span class="token punctuation">(</span>DeBugInfo<span class="token punctuation">)</span>attributes<span class="token punctuation">;</span></span>
+<span class="line">            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">null</span> <span class="token operator">!=</span> dbi<span class="token punctuation">)</span></span>
+<span class="line">            <span class="token punctuation">{</span></span>
+<span class="line">                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Bug no: {0}"</span><span class="token punctuation">,</span> dbi<span class="token punctuation">.</span>BugNo<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Developer: {0}"</span><span class="token punctuation">,</span> dbi<span class="token punctuation">.</span>Developer<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Last Reviewed: {0}"</span><span class="token punctuation">,</span></span>
+<span class="line">                                 dbi<span class="token punctuation">.</span>LastReview<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Remarks: {0}"</span><span class="token punctuation">,</span> dbi<span class="token punctuation">.</span>Message<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">            <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">        <span class="token comment">// 遍历方法特性</span></span>
+<span class="line">        <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name">MethodInfo</span> m <span class="token keyword">in</span> type<span class="token punctuation">.</span><span class="token function">GetMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name">Attribute</span> a <span class="token keyword">in</span> m<span class="token punctuation">.</span><span class="token function">GetCustomAttributes</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="line">            <span class="token punctuation">{</span></span>
+<span class="line">                <span class="token class-name">DeBugInfo</span> dbi <span class="token operator">=</span> <span class="token punctuation">(</span>DeBugInfo<span class="token punctuation">)</span>a<span class="token punctuation">;</span></span>
+<span class="line">                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">null</span> <span class="token operator">!=</span> dbi<span class="token punctuation">)</span></span>
+<span class="line">                <span class="token punctuation">{</span></span>
+<span class="line">                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Bug no: {0}, for Method: {1}"</span><span class="token punctuation">,</span></span>
+<span class="line">                                    dbi<span class="token punctuation">.</span>BugNo<span class="token punctuation">,</span> m<span class="token punctuation">.</span>Name<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Developer: {0}"</span><span class="token punctuation">,</span> dbi<span class="token punctuation">.</span>Developer<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Last Reviewed: {0}"</span><span class="token punctuation">,</span></span>
+<span class="line">                                    dbi<span class="token punctuation">.</span>LastReview<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">                    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Remarks: {0}"</span><span class="token punctuation">,</span> dbi<span class="token punctuation">.</span>Message<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">                <span class="token punctuation">}</span></span>
+<span class="line">            <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">        Console<span class="token punctuation">.</span><span class="token function">ReadLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="反射-reflection" tabindex="-1"><a class="header-anchor" href="#反射-reflection"><span>反射 Reflection</span></a></h3>
+<p>反射指程序可以访问、检测和修改它本身状态或行为的一种能力。</p>
+<p>反射（Reflection）有下列用途：</p>
+<ul>
+<li>它允许在运行时查看特性（attribute）信息。</li>
+<li>它允许审查集合中的各种类型，以及实例化这些类型。</li>
+<li>它允许延迟绑定的方法和属性（property）。</li>
+<li>它允许在运行时创建新类型，然后使用这些类型执行一些任务。</li>
+</ul>
+<h4 id="获取元数据" tabindex="-1"><a class="header-anchor" href="#获取元数据"><span>获取元数据</span></a></h4>
+<p>使用<code v-pre>System.Reflextion</code>类中的<code v-pre>MemberInfo</code>对象去获取与类相关的特性</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token comment">// 如：</span></span>
+<span class="line"><span class="token class-name">System<span class="token punctuation">.</span>Reflection<span class="token punctuation">.</span>MeberInfo</span> info <span class="token operator">=</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">Test<span class="token punctuation">.</span><span class="token keyword">class</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token class-name"><span class="token keyword">object</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> attributes <span class="token operator">=</span> info<span class="token punctuation">.</span><span class="token function">GetCustomAttributes</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> attributes<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    System<span class="token punctuation">.</span>Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>attributes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="属性" tabindex="-1"><a class="header-anchor" href="#属性"><span>属性</span></a></h3>
+<blockquote>
+<p><strong><em>属性（Property）</em></strong>_ 是类（class）、结构（structure）和接口（interface）的命名（named）成员。类或结构中的成员变量或方法称为 <em><strong><em>域（Field）</em></strong></em>。属性（Property）是域（Field）的扩展，且可使用相同的语法来访问。它们使用 <em><strong><em>访问器（accessors）</em></strong></em> 让私有域的值可被读写或操作。_</p>
+</blockquote>
+<br />
+#### 访问器 Accessors
+> 简白的说：其实就是get,set的一种语法糖^_^
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">string</span></span> code <span class="token operator">=</span> <span class="token string">"xx"</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">int</span></span> age <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Code</span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">get</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">return</span> code<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">set</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        code <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> Age</span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">get</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">return</span> age<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">set</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        age <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>简单使用案例：</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token keyword">class</span> <span class="token class-name">Student</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">string</span></span> code <span class="token operator">=</span> <span class="token string">"N.A"</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">string</span></span> name <span class="token operator">=</span> <span class="token string">"not known"</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">int</span></span> age <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 声明类型为 string 的 Code 属性</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Code</span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">get</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token keyword">return</span> code<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token keyword">set</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            code <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 声明类型为 string 的 Name 属性</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Name</span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">get</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token keyword">return</span> name<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token keyword">set</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            name <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 声明类型为 int 的 Age 属性</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> Age</span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">get</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token keyword">return</span> age<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token keyword">set</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            age <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> <span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">return</span> <span class="token string">"Code = "</span> <span class="token operator">+</span> Code <span class="token operator">+</span><span class="token string">", Name = "</span> <span class="token operator">+</span> Name <span class="token operator">+</span> <span class="token string">", Age = "</span> <span class="token operator">+</span> Age<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">ExampleDemo</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token comment">// 创建一个新的 Student 对象</span></span>
+<span class="line">        <span class="token class-name">Student</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">        <span class="token comment">// 设置 student 的 code、name 和 age</span></span>
+<span class="line">        s<span class="token punctuation">.</span>Code <span class="token operator">=</span> <span class="token string">"001"</span><span class="token punctuation">;</span></span>
+<span class="line">        s<span class="token punctuation">.</span>Name <span class="token operator">=</span> <span class="token string">"Zara"</span><span class="token punctuation">;</span></span>
+<span class="line">        s<span class="token punctuation">.</span>Age <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span></span>
+<span class="line">        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Student Info: {0}"</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token comment">// 增加年龄</span></span>
+<span class="line">        s<span class="token punctuation">.</span>Age <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span></span>
+<span class="line">        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Student Info: {0}"</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">        Console<span class="token punctuation">.</span><span class="token function">ReadKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="抽象属性" tabindex="-1"><a class="header-anchor" href="#抽象属性"><span>抽象属性</span></a></h4>
+<p>抽象类可以拥有抽象属性，这些属性在派生类中被实现</p>
+<div class="language-csharp line-numbers-mode" data-highlighter="prismjs" data-ext="cs" data-title="cs"><pre v-pre class="language-csharp"><code><span class="line"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Person</span></span>
+<span class="line"><span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Name</span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">get</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">set</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> Age</span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">get</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token keyword">set</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"><span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Person</span></span></span>
+<span class="line">   <span class="token punctuation">{</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">string</span></span> code <span class="token operator">=</span> <span class="token string">"N.A"</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">string</span></span> name <span class="token operator">=</span> <span class="token string">"N.A"</span><span class="token punctuation">;</span></span>
+<span class="line">    <span class="token keyword">private</span> <span class="token class-name"><span class="token keyword">int</span></span> age <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 声明类型为 string 的 Code 属性</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Code</span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">get</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token keyword">return</span> code<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token keyword">set</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            code <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 声明类型为 string 的 Name 属性</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Name</span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">get</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token keyword">return</span> name<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token keyword">set</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            name <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"></span>
+<span class="line">    <span class="token comment">// 声明类型为 int 的 Age 属性</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">int</span></span> Age</span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">get</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            <span class="token keyword">return</span> age<span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">        <span class="token keyword">set</span></span>
+<span class="line">        <span class="token punctuation">{</span></span>
+<span class="line">            age <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span></span>
+<span class="line">        <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line">    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> <span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    <span class="token punctuation">{</span></span>
+<span class="line">        <span class="token keyword">return</span> <span class="token string">"Code = "</span> <span class="token operator">+</span> Code <span class="token operator">+</span><span class="token string">", Name = "</span> <span class="token operator">+</span> Name <span class="token operator">+</span> <span class="token string">", Age = "</span> <span class="token operator">+</span> Age<span class="token punctuation">;</span></span>
+<span class="line">    <span class="token punctuation">}</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
 
 
